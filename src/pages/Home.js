@@ -72,23 +72,23 @@ function Home() {
 
   return (
     <Box >
-      <Grid mx='16' templateColumns="repeat(5, 1fr)" mt='8'>
+      <Grid mx={{ base: '4', md: '4', lg: 12, xl: 16 }} templateColumns="repeat(5, 1fr)" mt='8'>
         <GridItem colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'}>
           <Box>
             <Box>
               <Text fontSize="md">
                 WELCOME TO MY WORLD
               </Text>
-              <Text fontSize={{ base: '5xl', md: '3xl', lg: '5xl', xl: '6xl' }} fontWeight="bold" mt={3}>
+              <Text fontSize={{ base: '3xl', md: '3xl', lg: '5xl', xl: '6xl' }} fontWeight="bold" mt={3}>
                 Hi, I'm <Text as="span" color="#ff014f">Chandan Kumar</Text>
               </Text>
-              <Text fontSize={{ base: '4xl', md: '2xl', lg: '4xl', xl: '5xl' }} fontWeight="bold" color="#ff014f">
+              <Text fontSize={{ base: '2xl', md: '2xl', lg: '4xl', xl: '5xl' }} fontWeight="bold" color="#ff014f">
                 a <Text as="span" color="gray.900">
                   {text}
                   {cursor ? <Text as="span" fontWeight={'thin'} color="#ff014f">|</Text> : null}
                 </Text>
               </Text>
-              <Text fontSize={{ base: 'md', md: 'sm', lg: 'md', xl: 'md' }} color="gray.900" mt={4} className='test' lineHeight={2} w='90%'>
+              <Text fontSize={{ base: 'sm', md: 'sm', lg: 'md', xl: 'md' }} color="gray.900" mt={4} className='test' lineHeight={2} w='90%'>
                 I'm a Web Developer from India. I'm passionate about Web Development and I enjoy learning new things. I'm currently working on my skills and learning new technologies. I'm looking for a job as a Web Developer.
               </Text>
             </Box>

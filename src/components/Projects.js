@@ -46,17 +46,17 @@ function Projects() {
                 }
             ],
             features: [
-                "Authentication",
-                "Admin Panel",
-                "Product Listing"
+                "Users can login & signup",
+                "Category Wise Products",
+                "Add To Cart | Products & Cart Page"
             ],
-            github: "",
-            live: "",
+            github: "https://github.com/ApexSpunk/ruthless-store-61",
+            live: "https://myntra.indspunk.com/",
             id: 1,
         },
         {
             name: "Airtables Clone",
-            img: "./myntra.png",
+            img: "./airtable.png",
             description: 'Airtable is a cloud-based software company that develops a NoSQL database and a visual development environment for building applications. It is a spreadsheet-database hybrid that combines the power of a database with the flexibility of a spreadsheet.',
             techStacks: [
                 {
@@ -97,16 +97,16 @@ function Projects() {
             ],
             features: [
                 "Authentication",
-                "Admin Panel",
-                "Product Listing"
+                "Dashboard | Tables | Records",
+                "Add & Delete Records"
             ],
-            github: "",
-            live: "",
+            github: "https://github.com/ApexSpunk/eight-club-5364",
+            live: "https://airtable.indspunk.com/",
             id: 2,
         },
         {
             name: "Shop.com Clone",
-            img: "./myntra.png",
+            img: "./shop.png",
             description: 'Shop.com is an online shopping website that sells clothing, footwear, accessories, beauty products, and lifestyle products. It is an Indian fashion e-commerce company headquartered in Bengaluru, Karnataka, India and is owned by Flipkart.',
             techStacks: [
                 {
@@ -146,18 +146,18 @@ function Projects() {
                 }
             ],
             features: [
-                "Authentication",
-                "Admin Panel",
-                "Product Listing"
+                "User Authentication",
+                "ADD To Cart | Remove From Cart",
+                "Product Listing | Cart Page"
             ],
-            github: "",
-            live: "",
+            github: "https://github.com/ApexSpunk/deranged-bikes-7325",
+            live: "https://shop.indspunk.com/",
             id: 2,
         },
 
     ];
     return (
-        <Box mt='4'>
+        <Box mt='4' mx={{ base: '0', md: '4', lg: 12, xl: 28 }}>
             <Box textAlign={'center'}>
                 <Text fontSize='4xl' fontWeight='bold' mt='12'>My Projects</Text>
             </Box>
