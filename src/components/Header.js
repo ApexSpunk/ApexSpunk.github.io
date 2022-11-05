@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/icons';
 
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-scroll'
 //linear-gradient(145deg, #e2e8ec, #ffffff);
 function Header() {
 
@@ -30,8 +30,8 @@ function Header() {
             if (window.scrollY > 150) {
                 setIsOpen(true)
             }
-            
-            if(window.scrollY > 120) {
+
+            if (window.scrollY > 120) {
                 setNavbar(true)
             }
 
@@ -47,9 +47,8 @@ function Header() {
 
 
 
-
     return (
-        <Box  py={navbar ? 1 : 3} position={navbar ? 'sticky' : 'relative'} zIndex='1' bg={navbar ? 'gray.100' : 'gray.100'} boxShadow={navbar ? 'md' : 'none'} transition='all 0.5s ease-in-out' top={isOpen ? '0' : '-30%'}>
+        <Box py={navbar ? 1 : 3} position={navbar ? 'sticky' : 'relative'} zIndex='12' bg={navbar ? 'gray.100' : 'gray.100'} boxShadow={navbar ? 'md' : 'none'} transition='all 0.5s ease-in-out' top={isOpen ? '0' : '-30%'}>
             <Flex height={20} alignItems="center" justifyContent="center" px={{ base: 4, sm: 4 }}>
                 <Link to='/'>
                     <Box>
@@ -58,12 +57,21 @@ function Header() {
                 </Link>
                 <Spacer />
                 <Flex display={{ base: 'none', md: 'flex' }} gap={{ base: 5, lg: 8, xl: 12 }} align="center" fontWeight="semibold" fontSize='14px'>
-                    <Link to="/store" >
+                    <Link to="/" activeClass="activeLink" >
                         <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>HOME</Text>
                     </Link>
-                    <Link to="/store"><Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>ABOUT ME</Text></Link>
-                    <Link to="/store"><Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>SKILLS</Text></Link>
-                    <Link to="/store"><Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>PROJECTS</Text></Link>
+                    <Link activeClass="activeLink" to="about" spy={true} smooth={true} offset={-70} duration={500}>
+                        <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>ABOUT ME</Text>
+                        <Box w='4' h='1' position='absolute' mt='1' />
+                    </Link>
+                    <Link activeClass="activeLink" to="project" spy={true} smooth={true} offset={-70} duration={500}>
+                        <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>PROJECTS</Text>
+                        <Box w='4' h='1' position='absolute' mt='1' />
+                    </Link>
+                    <Link activeClass="activeLink1" to="skill" spy={true} smooth={true} offset={-70} duration={500}>
+                        <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>SKILLS</Text>
+                        <Box w='4' h='1' position='absolute' mt='1' />
+                    </Link>
                 </Flex>
                 <Flex
                     rounded='lg' align="center" fontWeight="semibold" fontSize='14px' color="#ff014f"
@@ -93,13 +101,13 @@ function Header() {
                                 <Link to="/">
                                     Home
                                 </Link>
-                                <Link to="/about">
+                                <Link to="about">
                                     About Me
                                 </Link>
-                                <Link to="/skills">
+                                <Link to="skills">
                                     Skills
                                 </Link>
-                                <Link to="/projects">
+                                <Link to="projects">
                                     Projects
                                 </Link>
                                 <Link to="/contact">

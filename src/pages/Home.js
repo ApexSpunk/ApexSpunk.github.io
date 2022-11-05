@@ -1,7 +1,9 @@
 import { Box, Divider, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import About from '../components/About'
+import Github from '../components/Github'
 import Projects from '../components/Projects'
+import Skills from '../components/Skills'
 //5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
 function Home() {
 
@@ -9,7 +11,7 @@ function Home() {
   const [text, setText] = useState(0)
   const [cursor, setCursor] = useState(true)
 
-  
+
 
   useEffect(() => {
     let i = 0
@@ -73,7 +75,7 @@ function Home() {
   return (
     <Box >
       <Grid mx={{ base: '4', md: '4', lg: 12, xl: 16 }} templateColumns="repeat(5, 1fr)" mt='8'>
-        <GridItem colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'}>
+        <GridItem colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'} position={'relative'} zIndex={10}>
           <Box>
             <Box>
               <Text fontSize="md">
@@ -142,6 +144,10 @@ function Home() {
       <About />
       <Divider mt='8' color={'gray.900'} />
       <Projects />
+      <Divider mt='8' color={'gray.900'} />
+      <Skills />
+      <Divider mt='8' color={'gray.900'} />
+      <Github />
     </Box>
   )
 }

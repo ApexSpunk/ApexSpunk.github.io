@@ -157,11 +157,11 @@ function Projects() {
 
     ];
     return (
-        <Box mt='4' mx={{ base: '0', md: '4', lg: 12, xl: 28 }}>
+        <Box mt='20' id='project' mx={{ base: '0', md: '4', lg: 12, xl: 28 }} position={'relative'} zIndex={10}>
             <Box textAlign={'center'}>
                 <Text fontSize='4xl' fontWeight='bold' mt='12'>My Projects</Text>
             </Box>
-            <Box display='flex' justifyContent='space-between' w='60' mb='12' mx='auto' alignContent={'center'}>
+            <Box display='flex' justifyContent='space-between' w='60' mb='20' mx='auto' alignContent={'center'}>
                 <Box w='25%' h={"6px"} bg='#ff014f' mt='10px' />
                 <Spacer />
                 <Text fontSize='md' fontWeight='bold' color='#ff014f'>PROJECTS</Text>

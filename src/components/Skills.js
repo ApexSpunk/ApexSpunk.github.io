@@ -1,0 +1,99 @@
+import { Box, Image, Spacer, Text } from '@chakra-ui/react'
+import React from 'react'
+import '../Animate.css'
+
+function Skills() {
+    const skills = [
+        {
+            name: 'HTML',
+            img: 'https://cdn-icons-png.flaticon.com/512/1532/1532556.png'
+        },
+        {
+            name: 'CSS',
+            img: 'https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/121-css3-512.png'
+        },
+        {
+            name: 'JavaScript',
+            img: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png'
+        },
+        {
+            name: 'React',
+            img: 'https://cdn1.iconfinder.com/data/icons/programing-development-8/24/react_logo-512.png'
+        },
+        {
+            name: 'NodeJs',
+            img: 'https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png'
+        },
+        {
+            name: 'MongoDB',
+            img: 'https://cdn.iconscout.com/icon/free/png-512/mongodb-5-1175140.png'
+        },
+        {
+            name: 'Express',
+            img: 'https://miro.medium.com/max/1200/0*iechRr4efJARJmnK.jpg'
+        },
+        {
+            name: 'REST API',
+            img: 'https://miro.medium.com/max/300/1*1RDFnS8FgAOQFegtuynxWw.png'
+        },
+        {
+            name: 'Git',
+            img: 'https://cdn.iconscout.com/icon/free/png-512/git-226092.png'
+        },
+        {
+            name: 'Github',
+            img: 'https://cdn.iconscout.com/icon/free/png-512/github-153-675523.png'
+        },
+        {
+            name: "Heroku",
+            img: "https://cledara-public.s3.eu-west-2.amazonaws.com/heroku.png"
+        },
+        {
+            name: "Chakra UI",
+            img: "https://camo.githubusercontent.com/eec63163a5209f78e8b0e3d6ab82eb981d03c4453a7a466f4fdc063da09f2a4d/68747470733a2f2f692e696d6775722e636f6d2f454d796b5a62332e706e67"
+        },
+
+
+    ]
+    return (
+        <Box id="skill" style={{ backgroundColor: 'red' }}>
+            <div className="area">
+                <Box maxW="1200px" mx="auto" p="5" pb='24' position={'relative'} zIndex={10}>
+                    <Box textAlign={'center'}>
+                        <Text fontSize='4xl' color='white' fontWeight='bold' mt='12'>My Skills</Text>
+                    </Box>
+                    <Box display='flex' justifyContent='space-between' w='40' mb='20' mx='auto' alignContent={'center'}>
+                        <Box w='25%' h={"6px"} bg='white' mt='10px' />
+                        <Spacer />
+                        <Text fontSize='md' fontWeight='bold' color='white'>SKILLS</Text>
+                        <Spacer />
+                        <Box w='25%' h={"6px"} bg='white' mt='10px' />
+                    </Box>
+                    <Box display="grid" gridTemplateColumns="repeat(auto-fit, minmax(150px, 1fr))" gap="5" mt="10">
+                        {skills.map((skill, index) => (
+                            <Box key={index} textAlign="center" p="6" bg="white" borderRadius="10%" boxShadow="md" display="flex"
+                                flexDirection="column" alignItems="center" justifyContent="center" transition="all 0.3s ease-in-out" cursor="pointer" _hover={{ transform: 'translateY(-10px)', boxShadow: 'lg' }} _groupHover={{ display: "block" }} >
+                                <Image src={skill.img} alt={skill.name} w="100px" mx="auto" />
+
+                            </Box>
+                        ))}
+                    </Box>
+                </Box>
+                <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div >
+        </Box>
+    )
+}
+
+export default Skills

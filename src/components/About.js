@@ -3,11 +3,11 @@ import React from 'react'
 
 function About() {
     return (
-        <Box  mt='4' mx={{base: '8', md: '12', lg: '24', xl: '32'}} >
+        <Box mt='20' id='about' mx={{base: '8', md: '12', lg: '24', xl: '32'}}  position={'relative'} zIndex={10}>
             <Box textAlign={'center'}>
                 <Text fontSize='4xl' fontWeight='bold' mt='12'>About Me</Text>
             </Box>
-            <Box display='flex' justifyContent='space-between' w='48' mb='12' mx='auto' alignContent={'center'}>
+            <Box display='flex' justifyContent='space-between' w='48' mb='20' mx='auto' alignContent={'center'}>
                 <Box w='30%' h={"6px"} bg='#ff014f' mt='10px' />
                 <Spacer />
                 <Text fontSize='md' fontWeight='bold' color='#ff014f'>ABOUT</Text>
