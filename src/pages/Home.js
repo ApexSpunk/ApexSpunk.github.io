@@ -101,11 +101,11 @@ function Home() {
                     Useful Links
                   </Text>
                   <Box display="flex" alignItems="center" gap={4} mt='4'>
-                    <Box className='button' p='5' borderRadius='lg'>
-                      <Image src="https://rainbowit.net/html/inbio/assets/images/icons/icons-01.png" alt="logo" h={6} />
+                    <Box className='button' p='3' borderRadius='lg'>
+                      <Image src="./port.png" alt="logo" h={10} />
                     </Box>
-                    <Box className='button' p='5' borderRadius='lg'>
-                      <Image src="https://rainbowit.net/html/inbio/assets/images/icons/icons-02.png" alt="logo" h={6} />
+                    <Box className='button' p='4' borderRadius='lg'>
+                      <Image src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="logo" h={8} />
                     </Box>
                     <Box className='button' p='5' borderRadius='lg' w={16} display='flex' justifyContent='center' alignItems='center' >
                       <Image src="https://rainbowit.net/html/inbio/assets/images/icons/icons-03.png" alt="logo" h={6} />
@@ -115,18 +115,10 @@ function Home() {
               </GridItem>
               <GridItem colSpan={1} display={{ base: 'none', md: 'block' }}>
                 <Box>
-                  <Text fontSize="md" color="gray.900">
-                    Available On
-                  </Text>
-                  <Box display="flex" alignItems="center" gap={4} mt='4'>
-                    <Box className='button' p='5' borderRadius='lg'>
-                      <Image src="https://rainbowit.net/html/inbio/assets/images/icons/icons-01.png" alt="logo" h={6} />
-                    </Box>
-                    <Box className='button' p='5' borderRadius='lg'>
-                      <Image src="https://rainbowit.net/html/inbio/assets/images/icons/icons-02.png" alt="logo" h={6} />
-                    </Box>
-                    <Box className='button' p='5' borderRadius='lg' w={16} display='flex' justifyContent='center' alignItems='center'>
-                      <Image src="https://rainbowit.net/html/inbio/assets/images/icons/icons-03.png" alt="logo" h={6} />
+                  <Box display="flex" alignItems="center" gap={4} mt='10'>
+                    <Box className='button' p='4' borderRadius='lg' w='50%' gap='2' display='flex' justifyContent='center' alignItems='center'>
+                      <Image src="./download.png" alt="logo" h={6} />
+                      <Text fontSize='xl' fontWeight="thin">Resume</Text>
                     </Box>
                   </Box>
                 </Box>
