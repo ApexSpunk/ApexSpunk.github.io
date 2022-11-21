@@ -79,7 +79,7 @@ function Skills() {
                         ))}
                     </Box>
                 </Box>
-                <ul class="circles">
+                <ul className="circles">
                     <li></li>
                     <li></li>
                     <li></li>

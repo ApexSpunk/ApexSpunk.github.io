@@ -1,9 +1,51 @@
 import { Box, Flex, Grid, GridItem, Image, Spacer, Text } from '@chakra-ui/react'
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { motion, useScroll } from 'framer-motion'
 function About() {
+
+    // slide from left when scroll reaches this component
+
+    const slideLeft = {
+        hidden: { opacity: 0, x: -100 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 1,
+                ease: "easeOut",
+                when: "beforeChildren",
+                staggerChildren: 0.5
+            }
+        }
+    }
+
+    const slideRight = {
+        hidden: { opacity: 0, x: 100 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 1,
+                ease: "easeOut",
+                when: "beforeChildren",
+                staggerChildren: 0.5
+            }
+        }
+    }
+
+    const { scrollY } = useScroll()
+
+    useEffect(() => {
+        return scrollY.onChange((latest) => {
+            console.log("Page scroll: ", latest)
+        })
+    }, [scrollY])
+
+
+
+
     return (
-        <Box mt='20' id='about' mx={{base: '8', md: '12', lg: '24', xl: '32'}}  position={'relative'} zIndex={10}>
+        <Box mt='20' id='about' mx={{ base: '8', md: '12', lg: '24', xl: '32' }} position={'relative'} zIndex={10}>
             <Box textAlign={'center'}>
                 <Text fontSize='4xl' fontWeight='bold' mt='12'>About Me</Text>
             </Box>
@@ -16,16 +58,16 @@ function About() {
             </Box>
             <Grid templateColumns="repeat(10, 1fr)" gap={8}>
                 <GridItem display='flex' justifyContent='center' alignItems='center' colSpan={{ base: 10, lg: 4 }}>
-                    <Box className='layout' borderRadius='2xl' >
+                    <Box className='layout' borderRadius='2xl' as={motion.div} variants={slideLeft} initial="hidden" animate="visible">
                         <Image src="./banner.png" alt="logo" objectFit={'cover'} mt='2' />
                     </Box>
                 </GridItem>
-                <GridItem display='flex' justifyContent='center' alignItems='center'  colSpan={{ base: 10, lg: 6 }}>
+                <GridItem display='flex' justifyContent='center' alignItems='center' colSpan={{ base: 10, lg: 6 }} as={motion.div} variants={slideRight} initial="hidden" animate="visible">
                     <Box>
                         <Flex alignItems="center">
                             <Image mt='4' src="https://rainbowit.net/html/inbio/assets/images/icons/quote.png" opacity={.3} alt="logo" h={{ base: '20px', md: '30px', lg: '100px', xl: '150px' }} display={{ base: 'none', md: 'block' }} />
                             <Spacer />
-                            <Text fontSize='3xl'  textAlign='center' mt='4' fontWeight='bold' color='gray.500' mx={{ base: '0', md: '6', lg: '10', xl: '10' }}>
+                            <Text fontSize='3xl' textAlign='center' mt='4' fontWeight='bold' color='gray.500' mx={{ base: '0', md: '6', lg: '10', xl: '10' }}>
                                 " Aspiring Full Stack WEB DEVELOPER "
                             </Text>
                             <Spacer />
