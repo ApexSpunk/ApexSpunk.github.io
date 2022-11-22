@@ -86,7 +86,7 @@ function Home() {
       backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
       backgroundAttachment: 'fixed',
     }}>
-      <Grid h='90vh' mx={{ base: '4', md: '4', lg: 12, xl: 16 }} templateColumns="repeat(5, 1fr)" mt='8'>
+      <Grid mx={{ base: '4', md: '4', lg: 12, xl: 16 }} templateColumns="repeat(5, 1fr)" mt='8'>
         <GridItem colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'} position={'relative'} zIndex={10}>
           <Box>
             <Box>
@@ -140,7 +140,7 @@ function Home() {
         </GridItem>
         <GridItem colSpan={{ base: 5, md: 2 }}>
           <Box mt={{ base: 2, md: '-10px', lg: '-30px', xl: '-70px' }}>
-            <Image src="./blur_edges (8).jpg" alt="logo" />
+            <Image src="./blur_edges (8).jpg" alt="logo" maxH='820px'/>
           </Box>
         </GridItem>
       </Grid>
