@@ -5,7 +5,6 @@ import Contact from '../components/Contact'
 import Github from '../components/Github'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
-//5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
 
 const confetti = {
   light: {
@@ -82,20 +81,12 @@ function Home() {
   }, [])
 
 
-
-
-
-
-
-
-
-
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')} css={{
       backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
       backgroundAttachment: 'fixed',
     }}>
-      <Grid mx={{ base: '4', md: '4', lg: 12, xl: 16 }} templateColumns="repeat(5, 1fr)" mt='8'>
+      <Grid h='90vh' mx={{ base: '4', md: '4', lg: 12, xl: 16 }} templateColumns="repeat(5, 1fr)" mt='8'>
         <GridItem colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'} position={'relative'} zIndex={10}>
           <Box>
             <Box>
