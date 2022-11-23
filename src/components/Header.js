@@ -26,7 +26,6 @@ function Header() {
 
     useEffect(() => {
         const changeBackground = () => {
-            console.log(window.scrollY)
             if (window.scrollY > 150) {
                 setIsOpen(true)
             }

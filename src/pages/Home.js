@@ -136,7 +136,7 @@ function Home() {
       <Grid id='home' mx={{ base: '4', md: '4', lg: 12, xl: '8%' }} templateColumns="repeat(5, 1fr)" mt='8'>
         <GridItem colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'} position={'relative'} zIndex={10}>
           <Box>
-            <Box as={motion.div} initial='hidden' animate='visible' variants={slideLeft}>
+            <Box as={motion.div} initial='hidden' variants={slideLeft} whileInView='visible'>
               <Text fontSize="md">
                 WELCOME TO MY WORLD
               </Text>
@@ -153,7 +153,7 @@ function Home() {
                 I'm a Web Developer from India. I'm passionate about Web Development and I enjoy learning new things. I'm currently working on my skills and learning new technologies. I'm looking for a job as a Web Developer.
               </Text>
             </Box>
-            <Grid templateColumns="repeat(2, 1fr)" gap={6} mt={{ base: '8', md: '8', lg: '16', xl: '32' }} as={motion.div} initial='hidden' animate='visible' variants={slideUp}>
+            <Grid templateColumns="repeat(2, 1fr)" gap={6} mt={{ base: '8', md: '8', lg: '16', xl: '32' }} as={motion.div} initial='hidden' variants={slideUp} whileInView='visible'>
               <GridItem colSpan={{ base: 2, md: 1 }}>
                 <Box>
                   <Text fontSize="md" color="gray.900">
@@ -189,7 +189,7 @@ function Home() {
             </Grid>
           </Box>
         </GridItem>
-        <GridItem colSpan={{ base: 5, md: 2 }} as={motion.div} initial='hidden' animate='visible' variants={slideRight}>
+        <GridItem colSpan={{ base: 5, md: 2 }} as={motion.div} initial='hidden' variants={slideRight} whileInView='visible'>
           <Box mt={{ base: 2, md: '-10px', lg: '-30px', xl: '-70px' }}>
             <Image src="./blur_edges (8).jpg" alt="logo" />
           </Box>
@@ -198,9 +198,9 @@ function Home() {
       <Divider mt='8' color={'gray.900'} />
       <About />
       <Divider mt='8' color={'gray.900'} />
-      <Projects />
+      <Projects slideUp={slideUp} slideRight={slideRight} slideLeft={slideLeft} />
       <Divider mt='8' color={'gray.900'} />
-      <Skills />
+      <Skills slideUp={slideUp} slideRight={slideRight} slideLeft={slideLeft} />
       <Divider mt='8' color={'gray.900'} />
       <Github />
       <Divider mt='8' color={'gray.900'} />

@@ -2,16 +2,17 @@ import React from 'react'
 import { Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import { LinkIcon } from '@chakra-ui/icons'
 import { BsGithub } from 'react-icons/bs'
+import { motion } from 'framer-motion'
 
-function ProjectItem({ project }) {
+function ProjectItem({ project, slideLeft, slideRight, slideUp }) {
 
 
     const { name, description, img, live, github, features, techStacks } = project
 
     return (
         <Grid templateColumns="repeat(2, 1fr)" className='layout' gap={8} p='6' rounded='xl' mb='12' cursor={'pointer'} transition={'all 0.2s ease-in-out'} _hover={{ transform: 'scale(1.02)', boxShadow: 'lg' }}>
-            <GridItem display={'grid'} colSpan={{ base: 2, md: 1 }}>
-                <Box borderRadius='2xl'  >
+            <GridItem display={'grid'} colSpan={{ base: 2, md: 1 }}  as={motion.div} variants={slideLeft} initial="hidden" whileInView='visible'>
+                <Box borderRadius='2xl'>
                     <Image src={img} alt="logo" objectFit={'cover'} minH={"350px"} mt='2' rounded='xl' />
                 </Box>
                 <Flex mb='1' gap={4} mx='12' mt='6'>
@@ -33,7 +34,7 @@ function ProjectItem({ project }) {
                     </Box>
                 </Flex>
             </GridItem >
-            <GridItem colSpan={{ base: 2, md: 1 }} mt={{ base: '0', md: '1', lg: '2' }}>
+            <GridItem colSpan={{ base: 2, md: 1 }} mt={{ base: '0', md: '1', lg: '2' }} as={motion.div} variants={slideRight} initial="hidden" whileInView='visible'>
                 <Box borderRadius='2xl' pr='4'>
                     <Text fontSize="2xl" color="gray.900" fontWeight='semibold' className='test' lineHeight={2}>
                         {name}

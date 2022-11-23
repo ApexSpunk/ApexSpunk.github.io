@@ -2,7 +2,7 @@ import { Box, Spacer, Text } from '@chakra-ui/react'
 import React from 'react'
 import ProjectItem from './ProjectItem';
 
-function Projects() {
+function Projects({ slideUp, slideLeft, slideRight }) {
     const projects = [
         {
             name: "Myntra Clone",
@@ -169,7 +169,7 @@ function Projects() {
                 <Box w='25%' h={"6px"} bg='white' mt='10px' />
             </Box>
             {
-                projects.map((project, index) => <ProjectItem key={index} project={project} />)
+                projects.map((project, index) => <ProjectItem key={index} project={project} slideLeft={slideLeft} slideRight={slideRight} slideUp={slideUp} />)
             }
         </Box>
     )

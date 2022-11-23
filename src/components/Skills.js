@@ -1,6 +1,7 @@
 import { Box, Image, Spacer, Text } from '@chakra-ui/react'
 import React from 'react'
 import '../Animate.css'
+import { motion } from 'framer-motion'
 
 function Skills() {
     const skills = [
@@ -55,8 +56,13 @@ function Skills() {
 
 
     ]
+
+
+
+
     return (
         <Box id="skill" style={{ backgroundColor: 'red' }}>
+
             <div className="area">
                 <Box maxW="1200px" mx="auto" p="5" pb='24' position={'relative'} zIndex={10}>
                     <Box textAlign={'center'}>
@@ -71,11 +77,15 @@ function Skills() {
                     </Box>
                     <Box display="grid" gridTemplateColumns="repeat(auto-fit, minmax(150px, 1fr))" gap="5" mt="10">
                         {skills.map((skill, index) => (
-                            <Box key={index} textAlign="center" p="6" bg="white" borderRadius="10%" boxShadow="md" display="flex"
-                                flexDirection="column" alignItems="center" justifyContent="center" transition="all 0.3s ease-in-out" cursor="pointer" _hover={{ transform: 'translateY(-10px)', boxShadow: 'lg' }} _groupHover={{ display: "block" }} >
-                                <Image src={skill.img} alt={skill.name} w="100px" mx="auto" />
-
-                            </Box>
+                            <motion.div transition={{ type: "spring", damping: 3 }} style={{ padding: '24px', textAlign: 'center', borderRadius: '10%', backgroundColor: 'white', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.25)', cursor: 'pointer' }} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+                                initial={{ scale: 0.9 }}
+                                whileInView={{ scale: 1 }}>
+                                <Box as={motion.div} key={index}>
+                                    <Box>
+                                        <Image src={skill.img} alt={skill.name} w="100px" mx="auto" />
+                                    </Box>
+                                </Box>
+                            </motion.div>
                         ))}
                     </Box>
                 </Box>
@@ -92,7 +102,7 @@ function Skills() {
                     <li></li>
                 </ul>
             </div >
-        </Box>
+        </Box >
     )
 }
 

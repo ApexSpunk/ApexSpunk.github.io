@@ -33,14 +33,6 @@ function About() {
         }
     }
 
-    const { scrollY } = useScroll()
-
-    useEffect(() => {
-        return scrollY.onChange((latest) => {
-            console.log("Page scroll: ", latest)
-        })
-    }, [scrollY])
-
 
 
 
@@ -58,11 +50,12 @@ function About() {
             </Box>
             <Grid templateColumns="repeat(10, 1fr)" gap={8}>
                 <GridItem display='flex' justifyContent='center' alignItems='center' colSpan={{ base: 10, lg: 4 }}>
-                    <Box className='layout' borderRadius='2xl' as={motion.div} variants={slideLeft} initial="hidden" animate="visible">
+                {/* Not in view hidden */}
+                    <Box className='layout' borderRadius='2xl' as={motion.div} variants={slideLeft} initial="hidden" whileInView='visible'>
                         <Image src="./banner.png" alt="logo" objectFit={'cover'} mt='2' />
                     </Box>
                 </GridItem>
-                <GridItem display='flex' justifyContent='center' alignItems='center' colSpan={{ base: 10, lg: 6 }} as={motion.div} variants={slideRight} initial="hidden" animate="visible">
+                <GridItem display='flex' justifyContent='center' alignItems='center' colSpan={{ base: 10, lg: 6 }} as={motion.div} variants={slideRight} initial="hidden" whileInView='visible'>
                     <Box>
                         <Flex alignItems="center">
                             <Image mt='4' src="https://rainbowit.net/html/inbio/assets/images/icons/quote.png" opacity={.3} alt="logo" h={{ base: '20px', md: '30px', lg: '100px', xl: '150px' }} display={{ base: 'none', md: 'block' }} />
