@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import { LinkIcon } from '@chakra-ui/icons'
+import { BsGithub } from 'react-icons/bs'
 
 function ProjectItem({ project }) {
 
@@ -16,15 +17,15 @@ function ProjectItem({ project }) {
                 <Flex mb='1' gap={4} mx='12' mt='6'>
                     <Box transition={'all 0.3s ease-in-out'} _hover={{ transform: 'translateY(-5px)' }} w='100%'>
                         <a href={github} target="_blank" rel="noreferrer">
-                            <Box className='button' rounded='lg' px='8' py='4' align="center" fontWeight="semibold" fontSize='14px' color="#ff014f" display='flex' justifyContent='center' gap='2'>
-                                <img src="https://img.icons8.com/ios-filled/20/000000/github.png" alt="github" />
-                                Github
+                            <Box className='button' rounded='lg' px='8' py='4' align="center" fontWeight="semibold" fontSize='14px' color="gray.700" display='flex' justifyContent='center' gap='2'>
+                                <BsGithub fontSize='20px' />
+                                &nbsp; Github
                             </Box>
                         </a>
                     </Box>
                     <Box transition={'all 0.3s ease-in-out'} _hover={{ transform: 'translateY(-5px)' }} w='100%'>
                         <a href={live} target="_blank" rel="noreferrer">
-                            <Box className='button' rounded='lg' px='8' py='4' align="center" fontWeight="semibold" fontSize='14px' color="#ff014f">
+                            <Box className='button' rounded='lg' px='8' py='4' align="center" fontWeight="semibold" fontSize='14px' color="gray.700">
                                 <LinkIcon w={4} h={4} _groupHover={{ color: 'white' }} />
                                 &nbsp; Deployed
                             </Box>

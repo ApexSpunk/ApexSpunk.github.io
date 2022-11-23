@@ -50,25 +50,25 @@ function Header() {
     return (
         <Box py={navbar ? 1 : 3} position={navbar ? 'sticky' : 'relative'} zIndex='12' bg={navbar ? 'gray.100' : 'gray.100'} boxShadow={navbar ? 'md' : 'none'} transition='all 0.5s ease-in-out' top={isOpen ? '0' : '-30%'}>
             <Flex height={20} alignItems="center" justifyContent="center" px={{ base: 4, sm: 4 }}>
-                <Link to='/'>
-                    <Box>
+                <Link to="home" spy={true} smooth={true} offset={-100} duration={1500}>
+                    <Box cursor='pointer'>
                         <Image src="./developer-1.png" alt="logo" objectFit={'cover'} mt={navbar ? 0 : 2} h={navbar ? '36' : '52'} transition='all 0.5s ease-in-out' ml={{ base: '-20px', md: '0' }} />
                     </Box>
                 </Link>
                 <Spacer />
                 <Flex display={{ base: 'none', md: 'flex' }} gap={{ base: 5, lg: 8, xl: 12 }} align="center" fontWeight="semibold" fontSize='14px'>
-                    <Link to="/" activeClass="activeLink" >
+                    <Link activeClass="activeLink" to="home" spy={true} smooth={true} offset={-100} duration={1500}>
                         <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>HOME</Text>
                     </Link>
-                    <Link activeClass="activeLink" to="about" spy={true} smooth={true} offset={-70} duration={500}>
+                    <Link activeClass="activeLink" to="about" spy={true} smooth={true} offset={-130} duration={1500}>
                         <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>ABOUT ME</Text>
                         <Box w='4' h='1' position='absolute' mt='1' />
                     </Link>
-                    <Link activeClass="activeLink" to="project" spy={true} smooth={true} offset={-70} duration={500}>
+                    <Link activeClass="activeLink" to="project" spy={true} smooth={true} offset={-110} duration={1500}>
                         <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>PROJECTS</Text>
                         <Box w='4' h='1' position='absolute' mt='1' />
                     </Link>
-                    <Link activeClass="activeLink1" to="skill" spy={true} smooth={true} offset={-70} duration={500}>
+                    <Link activeClass="activeLink1" to="skill" spy={true} smooth={true} offset={-90} duration={1500}>
                         <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>SKILLS</Text>
                         <Box w='4' h='1' position='absolute' mt='1' />
                     </Link>
@@ -85,13 +85,11 @@ function Header() {
                         aria-label={'Toggle Navigation'}
                     />
                 </Flex>
-                <Box className='button' rounded='lg' px='8' py='4' ml={'50px'} mr='6' align="center" fontWeight="semibold" fontSize='14px' color="#ff014f" display={{ base: 'none', md: 'flex' }}>
-                    <Link to="/login">
-                        <Box align="center">
-                            <Text>CONTACT</Text>
-                        </Box>
-                    </Link>
-                </Box>
+                <Link to="contact" spy={true} smooth={true} offset={-70} duration={1500}>
+                    <Box className='button' rounded='lg' px='8' py='4' ml={'50px'} mr='6' align="center" fontWeight="semibold" fontSize='14px' color="#ff014f" display={{ base: 'none', md: 'flex' }}>
+                        CONTACT
+                    </Box>
+                </Link>
             </Flex>
             {
                 open && (

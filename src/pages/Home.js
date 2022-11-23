@@ -1,10 +1,13 @@
 import { Box, Divider, Grid, GridItem, Image, Text, useColorModeValue } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
+import { BsEnvelope, BsEnvelopeFill, BsFileEarmarkArrowDown, BsGithub, BsLinkedin } from 'react-icons/bs'
+import { Link } from 'react-scroll'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import Github from '../components/Github'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
+import { motion, useScroll } from 'framer-motion'
 
 const confetti = {
   light: {
@@ -26,7 +29,51 @@ function Home() {
 
   let animationText = ['Web Developer', 'Coder', 'Problem Solver']
   const [text, setText] = useState(0)
-  const [cursor, setCursor] = useState(true)
+  const [cursor, setCursor] = useState(true);
+
+  const slideLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+        when: "beforeChildren",
+        staggerChildren: 0.5
+      }
+    }
+  }
+
+  const slideRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+        when: "beforeChildren",
+        staggerChildren: 0.5
+      }
+    }
+  }
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 100 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+        when: "beforeChildren",
+        staggerChildren: 0.5
+      }
+    }
+  }
+
+  
 
 
 
@@ -86,10 +133,10 @@ function Home() {
       backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
       backgroundAttachment: 'fixed',
     }}>
-      <Grid mx={{ base: '4', md: '4', lg: 12, xl: '8%' }} templateColumns="repeat(5, 1fr)" mt='8'>
+      <Grid id='home' mx={{ base: '4', md: '4', lg: 12, xl: '8%' }} templateColumns="repeat(5, 1fr)" mt='8'>
         <GridItem colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'} position={'relative'} zIndex={10}>
           <Box>
-            <Box>
+            <Box as={motion.div} initial='hidden' animate='visible' variants={slideLeft}>
               <Text fontSize="md">
                 WELCOME TO MY WORLD
               </Text>
@@ -106,41 +153,45 @@ function Home() {
                 I'm a Web Developer from India. I'm passionate about Web Development and I enjoy learning new things. I'm currently working on my skills and learning new technologies. I'm looking for a job as a Web Developer.
               </Text>
             </Box>
-            <Grid templateColumns="repeat(2, 1fr)" gap={6} mt={{ base: '8', md: '8', lg: '16', xl: '32' }}>
+            <Grid templateColumns="repeat(2, 1fr)" gap={6} mt={{ base: '8', md: '8', lg: '16', xl: '32' }} as={motion.div} initial='hidden' animate='visible' variants={slideUp}>
               <GridItem colSpan={{ base: 2, md: 1 }}>
                 <Box>
                   <Text fontSize="md" color="gray.900">
                     Useful Links
                   </Text>
                   <Box display="flex" alignItems="center" gap={4} mt='4'>
-                    <Box className='button' p='3' borderRadius='lg'>
-                      <Image src="./port.png" alt="logo" h={10} />
+                    <Box className='button' p='4' borderRadius='lg'>
+                      <BsGithub size={32} color='#4d4d4d' />
                     </Box>
                     <Box className='button' p='4' borderRadius='lg'>
-                      <Image src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="logo" h={8} />
+                      <BsLinkedin size={32} color='#0078b7' />
                     </Box>
-                    <Box className='button' p='5' borderRadius='lg' w={16} display='flex' justifyContent='center' alignItems='center' >
-                      <Image src="https://rainbowit.net/html/inbio/assets/images/icons/icons-03.png" alt="logo" h={6} />
-                    </Box>
+                    <a href='mailto:indspunk@gmail.com'>
+                      <Box className='button' p='4' borderRadius='lg' >
+                        <BsEnvelopeFill size={32} color='#fe014f' />
+                      </Box>
+                    </a>
                   </Box>
                 </Box>
               </GridItem>
               <GridItem colSpan={1} display={{ base: 'none', md: 'block' }}>
-                <Box>
-                  <Box display="flex" alignItems="center" gap={4} mt='10'>
-                    <Box className='button' p='4' borderRadius='lg' w='50%' gap='2' display='flex' justifyContent='center' alignItems='center'>
-                      <Image src="./download.png" alt="logo" h={6} />
-                      <Text fontSize='xl' fontWeight="thin">Resume</Text>
+                <a href='Chandan_Kumar_Resume.pdf' download>
+                  <Box>
+                    <Box display="flex" alignItems="center" gap={4} mt='10'>
+                      <Box className='button' p='4' borderRadius='lg' w='50%' gap='2' display='flex' justifyContent='center' alignItems='center'>
+                        <Image src="./download.png" alt="logo" h={6} />
+                        <Text fontSize='xl' fontWeight="thin">Resume</Text>
+                      </Box>
                     </Box>
                   </Box>
-                </Box>
+                </a>
               </GridItem>
             </Grid>
           </Box>
         </GridItem>
-        <GridItem colSpan={{ base: 5, md: 2 }}>
+        <GridItem colSpan={{ base: 5, md: 2 }} as={motion.div} initial='hidden' animate='visible' variants={slideRight}>
           <Box mt={{ base: 2, md: '-10px', lg: '-30px', xl: '-70px' }}>
-            <Image src="./blur_edges (8).jpg" alt="logo"/>
+            <Image src="./blur_edges (8).jpg" alt="logo" />
           </Box>
         </GridItem>
       </Grid>
