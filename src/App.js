@@ -2,11 +2,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import AllRoutes from './pages/AllRoutes';
 import './App.css';
-import { Box } from '@chakra-ui/react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 
 function App() {
   return (
-    <Box bg='gray.100'>
+    <Box bg={useColorModeValue('gray.100', 'gray.900')}>
       <Header />
       <AllRoutes />
       <Footer />

@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, GridItem, Image, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Divider, Grid, GridItem, Image, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { BsEnvelope, BsEnvelopeFill, BsFileEarmarkArrowDown, BsGithub, BsLinkedin } from 'react-icons/bs'
 import { Link } from 'react-scroll'
@@ -73,7 +73,7 @@ function Home() {
     }
   }
 
-  
+
 
 
 
@@ -127,6 +127,8 @@ function Home() {
 
   }, [])
 
+  const { colorMode, toggleColorMode } = useColorMode()
+
 
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')} css={{
@@ -144,30 +146,30 @@ function Home() {
                 Hi, I'm <Text as="span" color="#ff014f">Chandan Kumar</Text>
               </Text>
               <Text fontSize={{ base: '2xl', md: '2xl', lg: '4xl', xl: '5xl' }} fontWeight="bold" color="#ff014f">
-                a <Text as="span" color="gray.900">
+                a <Text as="span" color={colorMode === 'light' ? 'gray.900' : 'white'}>
                   {text}
                   {cursor ? <Text as="span" fontWeight={'thin'} color="#ff014f">|</Text> : null}
                 </Text>
               </Text>
-              <Text fontSize={{ base: 'sm', md: 'sm', lg: 'md', xl: 'md' }} color="gray.900" mt={4} className='test' lineHeight={2} w='90%'>
+              <Text fontSize={{ base: 'sm', md: 'sm', lg: 'md', xl: 'md' }} mt={4} className='test' lineHeight={2} w='90%'>
                 I'm a Web Developer from India. I'm passionate about Web Development and I enjoy learning new things. I'm currently working on my skills and learning new technologies. I'm looking for a job as a Web Developer.
               </Text>
             </Box>
             <Grid templateColumns="repeat(2, 1fr)" gap={6} mt={{ base: '8', md: '8', lg: '16', xl: '32' }} as={motion.div} initial='hidden' variants={slideUp} whileInView='visible'>
               <GridItem colSpan={{ base: 2, md: 1 }}>
                 <Box>
-                  <Text fontSize="md" color="gray.900">
+                  <Text fontSize="md">
                     Useful Links
                   </Text>
                   <Box display="flex" alignItems="center" gap={4} mt='4'>
-                    <Box className='button' p='4' borderRadius='lg'>
-                      <BsGithub size={32} color='#4d4d4d' />
+                    <Box p='4' borderRadius='lg' className={colorMode === 'light' ? 'button' : 'darkbutton'}>
+                      <BsGithub size={32} olor={colorMode === 'light' ? '#4d4d4d' : 'white'} />
                     </Box>
-                    <Box className='button' p='4' borderRadius='lg'>
+                    <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} p='4' borderRadius='lg'>
                       <BsLinkedin size={32} color='#0078b7' />
                     </Box>
                     <a href='mailto:indspunk@gmail.com'>
-                      <Box className='button' p='4' borderRadius='lg' >
+                      <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} p='4' borderRadius='lg' >
                         <BsEnvelopeFill size={32} color='#fe014f' />
                       </Box>
                     </a>
@@ -178,7 +180,7 @@ function Home() {
                 <a href='Chandan_Kumar_Resume.pdf' download>
                   <Box>
                     <Box display="flex" alignItems="center" gap={4} mt='10'>
-                      <Box className='button' p='4' borderRadius='lg' w='50%' gap='2' display='flex' justifyContent='center' alignItems='center'>
+                      <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} p='4' borderRadius='lg' w='50%' gap='2' display='flex' justifyContent='center' alignItems='center'>
                         <Image src="./download.png" alt="logo" h={6} />
                         <Text fontSize='xl' fontWeight="thin">Resume</Text>
                       </Box>
@@ -191,7 +193,7 @@ function Home() {
         </GridItem>
         <GridItem colSpan={{ base: 5, md: 2 }} as={motion.div} initial='hidden' variants={slideRight} whileInView='visible'>
           <Box mt={{ base: 2, md: '-10px', lg: '-30px', xl: '-70px' }}>
-            <Image src="./blur_edges (8).jpg" alt="logo" />
+            <Image alt="logo" src={useColorModeValue( 'blur_edges (8).jpg','iii.png')} />
           </Box>
         </GridItem>
       </Grid>

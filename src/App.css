@@ -45,7 +45,7 @@
 
 .layout {
   box-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
-  background: linear-gradient(145deg, #e2e8ec, #ffffff);
+
 }
 
 .button:hover {
@@ -55,6 +55,30 @@
 
 .button:active {
   transform: scale(0.95);
+}
+
+.darkbutton {
+  box-shadow: 5px 5px 10px #1a1c28, -5px -5px 10px #12141c;
+  background: linear-gradient(to right bottom, #1d1f2c, #12141c)
+}
+
+.darklayout {
+  box-shadow: 5px 5px 10px #1a1c28, -5px -5px 10px #12141c;
+  background: linear-gradient(to right bottom, #202231, #171923)
+}
+
+.darkbutton:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.darkbutton:active {
+  transform: scale(0.95);
+}
+
+.invertImage {
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
 }
 
 @keyframes bounce {
@@ -80,13 +104,14 @@
   animation: bounce 2s infinite;
 }
 
-.activeLink > div{
+.activeLink>div {
   width: 70px;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
   background: linear-gradient(145deg, #ff014f, #d11414);
 }
-.activeLink1 > div{
+
+.activeLink1>div {
   width: 40px;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
@@ -98,4 +123,3 @@
   background: linear-gradient(145deg, #e2e8ec, #ffffff);
   cursor: pointer;
 }
-

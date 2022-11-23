@@ -1,24 +1,26 @@
 import React from 'react'
-import { Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Image, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { LinkIcon } from '@chakra-ui/icons'
 import { BsGithub } from 'react-icons/bs'
 import { motion } from 'framer-motion'
 
-function ProjectItem({ project, slideLeft, slideRight, slideUp }) {
+function ProjectItem({ project, slideLeft, slideRight, index }) {
+
+    const {colorMode, toggleColorMode} = useColorMode()
 
 
     const { name, description, img, live, github, features, techStacks } = project
 
     return (
-        <Grid templateColumns="repeat(2, 1fr)" className='layout' gap={8} p='6' rounded='xl' mb='12' cursor={'pointer'} transition={'all 0.2s ease-in-out'} _hover={{ transform: 'scale(1.02)', boxShadow: 'lg' }}>
-            <GridItem display={'grid'} colSpan={{ base: 2, md: 1 }}  as={motion.div} variants={slideLeft} initial="hidden" whileInView='visible'>
+        <Grid templateColumns="repeat(2, 1fr)" className={colorMode === 'light' ? 'layout' : 'darklayout'} gap={8} p='6' rounded='xl' mb='12' cursor={'pointer'} transition={'all 0.2s ease-in-out'} _hover={{ transform: 'scale(1.02)', boxShadow: 'lg' }} as={motion.div} variants={index % 2 === 0 ? slideLeft : slideRight} initial="hidden" whileInView='visible'>
+            <GridItem display={'grid'} colSpan={{ base: 2, md: 1 }}>
                 <Box borderRadius='2xl'>
                     <Image src={img} alt="logo" objectFit={'cover'} minH={"350px"} mt='2' rounded='xl' />
                 </Box>
                 <Flex mb='1' gap={4} mx='12' mt='6'>
                     <Box transition={'all 0.3s ease-in-out'} _hover={{ transform: 'translateY(-5px)' }} w='100%'>
                         <a href={github} target="_blank" rel="noreferrer">
-                            <Box className='button' rounded='lg' px='8' py='4' align="center" fontWeight="semibold" fontSize='14px' color="gray.700" display='flex' justifyContent='center' gap='2'>
+                            <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} rounded='lg' px='8' py='4' align="center" fontWeight="semibold" fontSize='14px' display='flex' justifyContent='center' gap='2' color={useColorModeValue('gray.700', 'white')}>
                                 <BsGithub fontSize='20px' />
                                 &nbsp; Github
                             </Box>
@@ -26,7 +28,7 @@ function ProjectItem({ project, slideLeft, slideRight, slideUp }) {
                     </Box>
                     <Box transition={'all 0.3s ease-in-out'} _hover={{ transform: 'translateY(-5px)' }} w='100%'>
                         <a href={live} target="_blank" rel="noreferrer">
-                            <Box className='button' rounded='lg' px='8' py='4' align="center" fontWeight="semibold" fontSize='14px' color="gray.700">
+                            <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} rounded='lg' px='8' py='4' align="center" fontWeight="semibold" fontSize='14px' color={useColorModeValue('gray.700', 'white')}>
                                 <LinkIcon w={4} h={4} _groupHover={{ color: 'white' }} />
                                 &nbsp; Deployed
                             </Box>
@@ -34,17 +36,17 @@ function ProjectItem({ project, slideLeft, slideRight, slideUp }) {
                     </Box>
                 </Flex>
             </GridItem >
-            <GridItem colSpan={{ base: 2, md: 1 }} mt={{ base: '0', md: '1', lg: '2' }} as={motion.div} variants={slideRight} initial="hidden" whileInView='visible'>
+            <GridItem colSpan={{ base: 2, md: 1 }} mt={{ base: '0', md: '1', lg: '2' }}>
                 <Box borderRadius='2xl' pr='4'>
-                    <Text fontSize="2xl" color="gray.900" fontWeight='semibold' className='test' lineHeight={2}>
+                    <Text fontSize="2xl" color={useColorModeValue('gray.900', 'white')} fontWeight='semibold' className='test' lineHeight={2}>
                         {name}
                     </Text>
-                    <Text fontSize="sm" color="gray.900" mt={2} className='test' lineHeight={1.5}>
+                    <Text fontSize="sm" color={useColorModeValue('gray.900', 'white')} mt={2} className='test' lineHeight={1.5}>
                         {description}
                     </Text>
                 </Box>
                 <Box borderRadius='2xl' mt='0' p='4' px='0'>
-                    <Text fontSize="xl" color="gray.900" fontWeight='semibold' className='test' lineHeight={2}>
+                    <Text fontSize="xl" color={useColorModeValue('gray.900', 'white')} fontWeight='semibold' className='test' lineHeight={2}>
                         Tech Stack
                     </Text>
                     <Flex gap='2' flexWrap={'wrap'}>
@@ -59,7 +61,7 @@ function ProjectItem({ project, slideLeft, slideRight, slideUp }) {
                     </Flex>
                 </Box>
                 <Box display={{ base: 'block', md: 'none', lg: 'grid' }} mt={{ base: '2', md: '4', lg: '4' }} >
-                    <Text fontSize="xl" mt='-2' mb='1' color="gray.900" fontWeight='semibold' className='test' lineHeight={2}>
+                    <Text fontSize="xl" mt='-2' mb='1' color={useColorModeValue('gray.900', 'white')} fontWeight='semibold' className='test' lineHeight={2}>
                         Key Features
                     </Text>
                     <Box color='white'>

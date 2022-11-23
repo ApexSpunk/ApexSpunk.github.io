@@ -156,6 +156,9 @@ function Projects({ slideUp, slideLeft, slideRight }) {
         },
 
     ];
+
+
+
     return (
         <Box mt='20' id='project' mx={{ base: '0', md: '4', lg: 12, xl: 28 }} position={'relative'} zIndex={10}>
             <Box textAlign={'center'}>
@@ -169,7 +172,7 @@ function Projects({ slideUp, slideLeft, slideRight }) {
                 <Box w='25%' h={"6px"} bg='white' mt='10px' />
             </Box>
             {
-                projects.map((project, index) => <ProjectItem key={index} project={project} slideLeft={slideLeft} slideRight={slideRight} slideUp={slideUp} />)
+                projects.map((project, index) => <ProjectItem key={index} index={index} project={project} slideLeft={slideLeft} slideRight={slideRight} slideUp={slideUp} />)
             }
         </Box>
     )

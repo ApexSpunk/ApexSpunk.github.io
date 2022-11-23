@@ -119,14 +119,11 @@ function Contact() {
                                     />
                                 </Link>
                             </Stack>
-
                             <Box
-                                bg={useColorModeValue('white', 'gray.700')}
                                 borderRadius="lg"
                                 w='full'
                                 p={8}
-                                color={useColorModeValue('gray.700', 'whiteAlpha.900')}
-                                shadow="base">
+                                className={useColorModeValue('layout', 'darklayout')}>
                                 <VStack spacing={5}>
                                     <FormControl isRequired>
                                         <FormLabel>Name</FormLabel>

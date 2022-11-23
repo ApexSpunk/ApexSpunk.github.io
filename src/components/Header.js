@@ -6,6 +6,9 @@ import {
     Image,
     Spacer,
     useDisclosure,
+    useColorMode,
+    Button,
+    useColorModeValue,
 } from '@chakra-ui/react';
 import {
     HamburgerIcon,
@@ -14,6 +17,7 @@ import {
 
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-scroll'
+import { BsMoonStarsFill, BsSun } from 'react-icons/bs';
 //linear-gradient(145deg, #e2e8ec, #ffffff);
 function Header() {
 
@@ -43,11 +47,13 @@ function Header() {
         window.addEventListener('scroll', changeBackground)
     }, [navbar])
 
+    const { colorMode, toggleColorMode } = useColorMode();
+
 
 
 
     return (
-        <Box py={navbar ? 1 : 3} position={navbar ? 'sticky' : 'relative'} zIndex='12' bg={navbar ? 'gray.100' : 'gray.100'} boxShadow={navbar ? 'md' : 'none'} transition='all 0.5s ease-in-out' top={isOpen ? '0' : '-30%'}>
+        <Box py={navbar ? 1 : 3} position={navbar ? 'sticky' : 'relative'} zIndex='12' boxShadow={navbar ? 'md' : 'none'} transition='all 0.5s ease-in-out' top={isOpen ? '0' : '-30%'} bg={colorMode == 'light' ? 'gray.100' : 'gray.900'} w='100%' >
             <Flex height={20} alignItems="center" justifyContent="center" px={{ base: 4, sm: 4 }}>
                 <Link to="home" spy={true} smooth={true} offset={-100} duration={1500}>
                     <Box cursor='pointer'>
@@ -71,6 +77,14 @@ function Header() {
                         <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>SKILLS</Text>
                         <Box w='4' h='1' position='absolute' mt='1' />
                     </Link>
+                    <Button
+                        aria-label="Toggle Color Mode"
+                        onClick={toggleColorMode}
+                        _focus={{ boxShadow: 'none' }}
+                        mx='-20px'
+                        w="fit-content">
+                        {colorMode === 'light' ? <BsMoonStarsFill /> : <BsSun />}
+                    </Button>
                 </Flex>
                 <Flex
                     rounded='lg' align="center" fontWeight="semibold" fontSize='14px' color="#ff014f"
@@ -85,14 +99,14 @@ function Header() {
                     />
                 </Flex>
                 <Link to="contact" spy={true} smooth={true} offset={-70} duration={1500}>
-                    <Box className='button' rounded='lg' px='8' py='4' ml={'50px'} mr='6' align="center" fontWeight="semibold" fontSize='14px' color="#ff014f" display={{ base: 'none', md: 'flex' }}>
+                    <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} rounded='lg' px='8' py='4' ml={'50px'} mr='6' align="center" fontWeight="semibold" fontSize='14px' color="#ff014f" display={{ base: 'none', md: 'flex' }}>
                         CONTACT
                     </Box>
                 </Link>
             </Flex>
             {
                 open && (
-                    <Box pb={4} display={{ md: 'none' }} position='absolute' top='87px' left='0' right='0' zIndex='1' bg={navbar ? 'gray.100' : 'gray.100'} boxShadow={navbar ? 'md' : 'none'} transition='all 0.5s ease-in-out'>
+                    <Box pb={4} display={{ md: 'none' }} position='absolute' top='87px' left='0' right='0' zIndex='1' boxShadow={navbar ? 'md' : 'none'} transition='all 0.5s ease-in-out'>
                         <Box as={'nav'} spacing={4} display='grid' gridTemplateColumns='repeat(1, 1fr)' gridGap={4} p={4} justifyContent='center' alignItems='center' margin='auto' h='88vh'>
                             <Box textAlign={'center'} display='flex' flexDirection='column' justifyContent='center' alignItems='center' gap='8' fontSize='20px' fontWeight='bold' color='gray.600'>
                                 <Link to="/">

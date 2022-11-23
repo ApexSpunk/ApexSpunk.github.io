@@ -1,4 +1,4 @@
-import { Box, Image, Spacer, Text } from '@chakra-ui/react'
+import { Box, Image, Spacer, Text, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import '../Animate.css'
 import { motion } from 'framer-motion'
@@ -56,14 +56,12 @@ function Skills() {
 
 
     ]
-
-
-
+    const { colorMode, toggleColorMode } = useColorMode();
 
     return (
-        <Box id="skill" style={{ backgroundColor: 'red' }}>
+        <Box id="skill">
 
-            <div className="area">
+            <div className={colorMode === "light" ? "area" : "areadark"}>
                 <Box maxW="1200px" mx="auto" p="5" pb='24' position={'relative'} zIndex={10}>
                     <Box textAlign={'center'}>
                         <Text fontSize='4xl' color='white' fontWeight='bold' mt='12'>My Skills</Text>
@@ -77,7 +75,7 @@ function Skills() {
                     </Box>
                     <Box display="grid" gridTemplateColumns="repeat(auto-fit, minmax(150px, 1fr))" gap="5" mt="10">
                         {skills.map((skill, index) => (
-                            <motion.div transition={{ type: "spring", damping: 3 }} style={{ padding: '24px', textAlign: 'center', borderRadius: '10%', backgroundColor: 'white', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.25)', cursor: 'pointer' }} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+                            <motion.div transition={{ type: "spring", damping: 3 }} style={{ padding: '24px', textAlign: 'center', borderRadius: '10%', backgroundColor: 'white', cursor: 'pointer' }} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
                                 initial={{ scale: 0.9 }}
                                 whileInView={{ scale: 1 }}>
                                 <Box as={motion.div} key={index}>
