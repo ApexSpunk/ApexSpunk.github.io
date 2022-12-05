@@ -77,6 +77,10 @@ function Header() {
                         <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>SKILLS</Text>
                         <Box w='4' h='1' position='absolute' mt='1' />
                     </Link>
+                    <a href='Chandan_Kumar_Resume.pdf'>
+                        <Text _hover={{ color: 'red' }} transition='all 0.5s ease-in-out'>RESUME</Text>
+                        <Box w='4' h='1' position='absolute' mt='1' />
+                    </a>
                     <Button
                         aria-label="Toggle Color Mode"
                         onClick={toggleColorMode}
