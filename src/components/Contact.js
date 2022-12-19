@@ -20,8 +20,8 @@ import {
     VStack,
 } from '@chakra-ui/react';
 import React from 'react';
-import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from 'react-icons/bs';
-import { MdEmail, MdOutlineEmail } from 'react-icons/md';
+import { BsGithub, BsLinkedin, BsMailbox, BsMailbox2, BsPerson, BsTwitter, BsVoicemail } from 'react-icons/bs';
+import { MdEmail, MdOutlineEmail, MdPhone } from 'react-icons/md';
 
 
 function Contact() {
@@ -48,6 +48,10 @@ function Contact() {
                         <Spacer />
                         <Box w='30%' h={"6px"} bg='white' mt='10px' />
                     </Box>
+                    <Flex alignItems='center' justifyContent='center' align='center' gap='6' w={{xl:'600px',lg:"400px",md:"300px"}} mx='auto' mb='12' shadow='md' p='4' rounded='md'>
+                        <Text display='flex' alignItems='center' justifyContent='center' align='center' gap='2' fontSize='xl' fontWeight='bold' textAlign='center'><MdEmail /> indspunk@gmail.com</Text>
+                        <Text display='flex' alignItems='center' justifyContent='center' align='center' gap='2' fontSize='xl' fontWeight='bold' textAlign='center'><MdPhone /> +91 7903481181</Text>
+                    </Flex>
                     <VStack spacing={{ base: 4, md: 8, lg: 20 }} >
                         <Stack
                             w='full'

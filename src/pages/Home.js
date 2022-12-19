@@ -162,12 +162,16 @@ function Home() {
                     Useful Links
                   </Text>
                   <Box display="flex" alignItems="center" gap={4} mt='4'>
-                    <Box p='4' borderRadius='lg' className={colorMode === 'light' ? 'button' : 'darkbutton'}>
-                      <BsGithub size={32} olor={colorMode === 'light' ? '#4d4d4d' : 'white'} />
-                    </Box>
+                    <a href='https://github.com/ApexSpunk' target='_blank'>
+                      <Box p='4' borderRadius='lg' className={colorMode === 'light' ? 'button' : 'darkbutton'}>
+                        <BsGithub size={32} olor={colorMode === 'light' ? '#4d4d4d' : 'white'} />
+                      </Box>
+                    </a>
+                    <a href='https://www.linkedin.com/in/indspunk/' target='_blank'>
                     <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} p='4' borderRadius='lg'>
                       <BsLinkedin size={32} color='#0078b7' />
                     </Box>
+                    </a>
                     <a href='mailto:indspunk@gmail.com'>
                       <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} p='4' borderRadius='lg' >
                         <BsEnvelopeFill size={32} color='#fe014f' />
@@ -193,7 +197,7 @@ function Home() {
         </GridItem>
         <GridItem colSpan={{ base: 5, md: 2 }} as={motion.div} initial='hidden' variants={slideRight} whileInView='visible'>
           <Box mt={{ base: 2, md: '-10px', lg: '-30px', xl: '-70px' }}>
-            <Image alt="logo" src={useColorModeValue( 'blur_edges (8).jpg','iii.png')} />
+            <Image alt="logo" src={useColorModeValue('blur_edges (8).jpg', 'iii.png')} />
           </Box>
         </GridItem>
       </Grid>
