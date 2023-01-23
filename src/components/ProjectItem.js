@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 function ProjectItem({ project, slideLeft, slideRight, index }) {
 
-    const {colorMode, toggleColorMode} = useColorMode()
+    const { colorMode, toggleColorMode } = useColorMode()
 
 
     const { name, description, img, live, github, features, techStacks } = project
@@ -14,8 +14,8 @@ function ProjectItem({ project, slideLeft, slideRight, index }) {
     return (
         <Grid templateColumns="repeat(2, 1fr)" className={colorMode === 'light' ? 'layout' : 'darklayout'} gap={8} p='6' rounded='xl' mb='12' cursor={'pointer'} transition={'all 0.2s ease-in-out'} _hover={{ transform: 'scale(1.02)', boxShadow: 'lg' }} as={motion.div} variants={index % 2 === 0 ? slideLeft : slideRight} initial="hidden" whileInView='visible'>
             <GridItem display={'grid'} colSpan={{ base: 2, md: 1 }}>
-                <Box borderRadius='2xl'>
-                    <Image src={img} alt="logo" objectFit={'cover'} minH={"350px"} mt='2' rounded='xl' />
+                <Box className="image-wrap" rounded={'xl'}>
+                    <img src={img} />
                 </Box>
                 <Flex mb='1' gap={4} mx='12' mt='6'>
                     <Box transition={'all 0.3s ease-in-out'} _hover={{ transform: 'translateY(-5px)' }} w='100%'>
@@ -67,7 +67,7 @@ function ProjectItem({ project, slideLeft, slideRight, index }) {
                     <Box color='white'>
                         <Box p='4' bg='gray.600' borderRadius='2xl'>
                             <Flex gap='2'>
-                                <Grid templateColumns="repeat(1, 1fr)" columnGap={6} w='80%' rowGap={0}>
+                                <Grid templateColumns="repeat(1, 1fr)" ml='4' columnGap={6} w='80%' rowGap={0}>
                                     {
                                         features.map((feature, index) => (
                                             <li key={index}>{feature}</li>

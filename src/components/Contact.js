@@ -80,7 +80,7 @@ function Contact() {
                                     />
                                 </Tooltip>
 
-                                <Link href="#">
+                                <a href="https://github.com/ApexSpunk" target="_blank">
                                     <IconButton
                                         aria-label="github"
                                         variant="ghost"
@@ -93,7 +93,7 @@ function Contact() {
                                         }}
                                         isRound
                                     />
-                                </Link>
+                                </a>
 
                                 <Link href="#">
                                     <IconButton
@@ -109,7 +109,7 @@ function Contact() {
                                     />
                                 </Link>
 
-                                <Link href="#">
+                                <a href="https://www.linkedin.com/in/indspunk/" target="_blank">
                                     <IconButton
                                         aria-label="linkedin"
                                         variant="ghost"
@@ -121,7 +121,7 @@ function Contact() {
                                         }}
                                         isRound
                                     />
-                                </Link>
+                                </a>
                             </Stack>
                             <Box
                                 borderRadius="lg"

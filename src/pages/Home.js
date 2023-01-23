@@ -136,7 +136,7 @@ function Home() {
       backgroundAttachment: 'fixed',
     }}>
       <Grid id='home' mx={{ base: '4', md: '4', lg: 12, xl: '8%' }} templateColumns="repeat(5, 1fr)" mt='8'>
-        <GridItem colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'} position={'relative'} zIndex={10}>
+        <GridItem my={ useColorModeValue(0, 14) } colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'} position={'relative'} zIndex={10}>
           <Box>
             <Box as={motion.div} initial='hidden' variants={slideLeft} whileInView='visible'>
               <Text fontSize="md">
@@ -195,9 +195,9 @@ function Home() {
             </Grid>
           </Box>
         </GridItem>
-        <GridItem colSpan={{ base: 5, md: 2 }} as={motion.div} initial='hidden' variants={slideRight} whileInView='visible'>
-          <Box mt={{ base: 2, md: '-10px', lg: '-30px', xl: '-70px' }}>
-            <Image alt="logo" src={useColorModeValue('blur_edges (8).jpg', 'iii.png')} />
+        <GridItem colSpan={{ base: 5, md: 2 }} as={motion.div} initial='hidden' variants={slideRight} whileInView='visible' display='flex' justifyContent='center' alignItems='center'>
+          <Box mt={useColorModeValue({ base: 2, md: '-10px', lg: '-30px', xl: '-70px' },0)} mx={useColorModeValue(0, '-12')}>
+            <Image alt="logo" src={useColorModeValue('blur_edges (8).jpg', 'hi.png')} />
           </Box>
         </GridItem>
       </Grid>
@@ -211,7 +211,7 @@ function Home() {
       <Github />
       <Divider mt='8' color={'gray.900'} />
       <Contact />
-    </Box>
+    </Box >
   )
 }
 
