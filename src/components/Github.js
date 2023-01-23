@@ -1,4 +1,4 @@
-import { Box, GridItem, Image, Spacer, Text } from '@chakra-ui/react'
+import { Box, Image, Spacer, Text } from '@chakra-ui/react'
 import React from 'react'
 
 function Github() {

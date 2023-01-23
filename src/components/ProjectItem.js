@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 function ProjectItem({ project, slideLeft, slideRight, index }) {
 
-    const { colorMode, toggleColorMode } = useColorMode()
+    const { colorMode } = useColorMode()
 
 
     const { name, description, img, live, github, features, techStacks } = project

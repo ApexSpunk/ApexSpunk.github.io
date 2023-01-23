@@ -4,7 +4,6 @@ import {
     Flex,
     FormControl,
     FormLabel,
-    Heading,
     IconButton,
     Input,
     InputGroup,
@@ -20,7 +19,7 @@ import {
     VStack,
 } from '@chakra-ui/react';
 import React from 'react';
-import { BsGithub, BsLinkedin, BsMailbox, BsMailbox2, BsPerson, BsTwitter, BsVoicemail } from 'react-icons/bs';
+import { BsGithub, BsLinkedin, BsPerson, BsTwitter} from 'react-icons/bs';
 import { MdEmail, MdOutlineEmail, MdPhone } from 'react-icons/md';
 
 
@@ -80,7 +79,7 @@ function Contact() {
                                     />
                                 </Tooltip>
 
-                                <a href="https://github.com/ApexSpunk" target="_blank">
+                                <a href="https://github.com/ApexSpunk" target="_blank" rel="noreferrer">
                                     <IconButton
                                         aria-label="github"
                                         variant="ghost"
@@ -109,7 +108,7 @@ function Contact() {
                                     />
                                 </Link>
 
-                                <a href="https://www.linkedin.com/in/indspunk/" target="_blank">
+                                <a href="https://www.linkedin.com/in/indspunk/" target="_blank" rel="noreferrer">
                                     <IconButton
                                         aria-label="linkedin"
                                         variant="ghost"

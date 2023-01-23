@@ -29,7 +29,7 @@ function Header() {
 
 
     return (
-        <Box py={navbar ? 1 : 3} position={navbar ? 'sticky' : 'relative'} zIndex='12' boxShadow={navbar ? 'md' : 'none'} transition='all 0.5s ease-in-out' top={isOpen ? '0' : '-30%'} bg={colorMode == 'light' ? 'gray.100' : 'gray.900'} w='100%' >
+        <Box py={navbar ? 1 : 3} position={navbar ? 'sticky' : 'relative'} zIndex='12' boxShadow={navbar ? 'md' : 'none'} transition='all 0.5s ease-in-out' top={isOpen ? '0' : '-30%'} bg={colorMode === 'light' ? 'gray.100' : 'gray.900'} w='100%' >
             <Flex height={20} alignItems="center" justifyContent="center" px={{ base: 4, sm: 4 }}>
                 <Link to="home" spy={true} smooth={true} offset={-130} duration={1500}>
                     <Box cursor='pointer'>

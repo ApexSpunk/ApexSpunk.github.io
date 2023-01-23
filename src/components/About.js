@@ -1,6 +1,6 @@
 import { Box, Flex, Grid, GridItem, Image, Spacer, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
-import { motion, useScroll } from 'framer-motion'
+import React from 'react'
+import { motion } from 'framer-motion'
 function About() {
 
     // slide from left when scroll reaches this component
