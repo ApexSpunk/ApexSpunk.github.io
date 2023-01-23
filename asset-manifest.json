@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.665a1523.css",
-    "main.js": "/static/js/main.c6e6febc.js",
+    "main.css": "/static/css/main.caf07d39.css",
+    "main.js": "/static/js/main.be302f46.js",
     "static/js/787.bd7e9792.chunk.js": "/static/js/787.bd7e9792.chunk.js",
     "static/media/poppins-all-400-normal.woff": "/static/media/poppins-all-400-normal.6fbfdac99c274b77fe96.woff",
     "static/media/poppins-devanagari-400-normal.woff2": "/static/media/poppins-devanagari-400-normal.64d5f06ee726edd58ca3.woff2",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/poppins-latin-400-normal.woff2": "/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/poppins-latin-ext-400-normal.woff2": "/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/index.html",
-    "main.665a1523.css.map": "/static/css/main.665a1523.css.map",
-    "main.c6e6febc.js.map": "/static/js/main.c6e6febc.js.map",
+    "main.caf07d39.css.map": "/static/css/main.caf07d39.css.map",
+    "main.be302f46.js.map": "/static/js/main.be302f46.js.map",
     "787.bd7e9792.chunk.js.map": "/static/js/787.bd7e9792.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.665a1523.css",
-    "static/js/main.c6e6febc.js"
+    "static/css/main.caf07d39.css",
+    "static/js/main.be302f46.js"
   ]
 }
