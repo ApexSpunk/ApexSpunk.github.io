@@ -136,7 +136,7 @@ function Home() {
       backgroundAttachment: 'fixed',
     }}>
       <Grid id='home' mx={{ base: '4', md: '4', lg: 12, xl: '8%' }} templateColumns="repeat(5, 1fr)" mt='8'>
-        <GridItem my={ useColorModeValue(0, 14) } colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'} position={'relative'} zIndex={10}>
+        <GridItem my={14} colSpan={{ base: 5, md: 3 }} justifyContent='center' alignItems='center' display={'grid'} position={'relative'} zIndex={10}>
           <Box>
             <Box as={motion.div} initial='hidden' variants={slideLeft} whileInView='visible'>
               <Text fontSize="md">
@@ -168,9 +168,9 @@ function Home() {
                       </Box>
                     </a>
                     <a href='https://www.linkedin.com/in/indspunk/' target='_blank'>
-                    <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} p='4' borderRadius='lg'>
-                      <BsLinkedin size={32} color='#0078b7' />
-                    </Box>
+                      <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} p='4' borderRadius='lg'>
+                        <BsLinkedin size={32} color='#0078b7' />
+                      </Box>
                     </a>
                     <a href='mailto:indspunk@gmail.com'>
                       <Box className={colorMode === 'light' ? 'button' : 'darkbutton'} p='4' borderRadius='lg' >
@@ -196,8 +196,8 @@ function Home() {
           </Box>
         </GridItem>
         <GridItem colSpan={{ base: 5, md: 2 }} as={motion.div} initial='hidden' variants={slideRight} whileInView='visible' display='flex' justifyContent='center' alignItems='center'>
-          <Box mt={useColorModeValue({ base: 2, md: '-10px', lg: '-30px', xl: '-70px' },0)} mx={useColorModeValue(0, '-12')}>
-            <Image alt="logo" src={useColorModeValue('blur_edges (8).jpg', 'hi.png')} />
+          <Box mt={{ base: 2, md: '-10px', lg: '-30px', xl: '-70px' }} mx={{base:4,sm:'-12'}}>
+            <Image alt="logo" src={'hi.png'} />
           </Box>
         </GridItem>
       </Grid>
