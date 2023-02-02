@@ -94,19 +94,6 @@ function Contact() {
                                     />
                                 </a>
 
-                                <Link href="#">
-                                    <IconButton
-                                        aria-label="twitter"
-                                        variant="ghost"
-                                        size="lg"
-                                        icon={<BsTwitter size="28px" />}
-                                        _hover={{
-                                            bg: 'blue.500',
-                                            color: useColorModeValue('white', 'gray.700'),
-                                        }}
-                                        isRound
-                                    />
-                                </Link>
 
                                 <a href="https://www.linkedin.com/in/indspunk/" target="_blank" rel="noreferrer">
                                     <IconButton

@@ -10,11 +10,14 @@ function ProjectItem({ project, slideLeft, slideRight, index }) {
 
 
     const { name, description, img, live, github, features, techStacks } = project
+    setTimeout(() => {
+        document.querySelector('.image-wrap').style.display = 'block'
+    }, 1000)
 
     return (
         <Grid templateColumns="repeat(2, 1fr)" className={colorMode === 'light' ? 'layout' : 'darklayout'} gap={8} p='6' rounded='xl' mb='12' cursor={'pointer'} transition={'all 0.2s ease-in-out'} _hover={{ transform: 'scale(1.02)', boxShadow: 'lg' }} as={motion.div} variants={index % 2 === 0 ? slideLeft : slideRight} initial="hidden" whileInView='visible'>
             <GridItem display={'grid'} colSpan={{ base: 2, md: 1 }}>
-                <Box className="image-wrap" rounded={'xl'}>
+                <Box className="image-wrap" rounded={'xl'} as={motion.div} initial="hidden" animate="visible" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { delay: 0.5 } } }} transition={{ duration: 5.5 }} whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.9 }} whileInView='visible'>
                     <img src={img} />
                 </Box>
                 <Flex mb='1' gap={4} mx='12' mt='6'>
