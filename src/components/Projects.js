@@ -52,7 +52,7 @@ function Projects({ slideUp, slideLeft, slideRight }) {
                 },
                 {
                     name: "Firebase",
-                    img: 'https://assets.stickpng.com/thumbs/5847f40ecef1014c0b5e488a.png'
+                    img: 'https://img.icons8.com/color/480/firebase.png'
                 },
                 {
                     name: "MongoDB",
@@ -119,8 +119,8 @@ function Projects({ slideUp, slideLeft, slideRight }) {
                 "Category Wise Products",
                 "Add To Cart | Products & Cart Page"
             ],
-            github: "https://github.com/ApexSpunk/ruthless-store-61",
-            live: "https://myntra.indspunk.com/",
+            github: "https://github.com/ApexSpunk/rapidtech",
+            live: "https://techrapid.in/",
             id: 1,
         }, ],
         [{
